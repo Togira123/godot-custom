@@ -2954,6 +2954,12 @@ Shader::Mode BaseMaterial3D::get_shader_mode() const {
 void BaseMaterial3D::_bind_methods() {
 	static_assert(sizeof(MaterialKey) == 16, "MaterialKey should be 16 bytes");
 
+	/*
+		custom change: exposed to get generated shader code from BaseMaterial by calling
+		RenderingServer.shader_get_code(base_material.get_shader_rid())
+	*/
+	ClassDB::bind_method(D_METHOD("get_shader_rid"), &BaseMaterial3D::get_shader_rid);
+
 	ClassDB::bind_method(D_METHOD("set_albedo", "albedo"), &BaseMaterial3D::set_albedo);
 	ClassDB::bind_method(D_METHOD("get_albedo"), &BaseMaterial3D::get_albedo);
 

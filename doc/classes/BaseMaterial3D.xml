@@ -24,6 +24,13 @@
 				Returns [code]true[/code], if the specified flag is enabled. See [enum Flags] enumerator for options.
 			</description>
 		</method>
+		<method name="get_shader_rid" qualifiers="const">
+			<return type="RID" />
+			<description>
+				Returns the RID of the Shader associated with this [code]Material[/code].
+				[b]Note:[/b] Only works when ran in the non-headless Editor.
+			</description>
+		</method>
 		<method name="get_texture" qualifiers="const">
 			<return type="Texture2D" />
 			<param index="0" name="param" type="int" enum="BaseMaterial3D.TextureParam" />
